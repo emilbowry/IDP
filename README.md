@@ -38,3 +38,22 @@ The robot then reverses from the truck area and either returns to the initial ra
 ### Use of serial communication
 
 Decided to use strings read from serial to adjust variables such as turn speeds and hard coding 90 degree turns during runtime which allowed much more efficient testing. Using this method was 80% faster than uploading over USB.
+
+
+### WiFi
+
+In addition, an AP server was set up over WiFi which allowed different points in the state machine to be activated quickly so that each state could be tested individually before running all states in sequence. This proved to be very effective because the exact location of issues within the code could be identified quickly and made integration of different mechanisms much easier.
+
+### Prototyping
+
+Initially, line following was identified as the main software challenge so within the first few days the software team developed a working line following algorithm on a cardboard prototype. This allowed the navigation to be much more polished by the time of the final competition which allowed the team to have confidence in achieving at least the points gained from following the line around the track.
+
+
+## Major Decisicions
+
+### 1) Use of Proportional Control as opposed to PID 
+
+Decided against using PID control since the line following algorithm would have required much more tuning to adjust Kp and Ki variables with analogue line sensors. This was decided upon testing with binary line sensor circuitry which worked very reliably.
+
+### 2) Use of timing to exit ramp state
+Decided against counting junctions since it introduced a greater possibility of error due to the robot deviating from the line significantly when climbing the ramp sometimes which would have been identified as a junction to enter the detect block state. Therefore, a global time variable was used to reflect the time since line following begins.
