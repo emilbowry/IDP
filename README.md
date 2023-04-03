@@ -57,3 +57,9 @@ Decided against using PID control since the line following algorithm would have 
 
 ### 2) Use of timing to exit ramp state
 Decided against counting junctions since it introduced a greater possibility of error due to the robot deviating from the line significantly when climbing the ramp sometimes which would have been identified as a junction to enter the detect block state. Therefore, a global time variable was used to reflect the time since line following begins.
+
+# Competition Outcome
+
+Unfortunately, we ended up coming in second place both in our competition and in the entire Cambridge Engineering cohort, which was quite disappointing. Despite having flawlessly completed 20 practice runs, our Ultrasonic Sensor (US) malfunctioned during the actual competition.
+
+The sensor detected an abnormal reading of an object 150mm away, even though there was nothing there. One possible cause could be attributed to me turning on our sound system to play the Imperial March from Star Wars. It's possible that when the speaker was initialized, it caused an ultrasonic emission at the start due to a sudden change in voltage, such as a delta-like pulse from turning it on. I will need to examine the specifications of the speaker and review our US code in order to determine the root cause of the malfunction.
